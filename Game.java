@@ -359,7 +359,7 @@ public class Game {
             }
         }
 
-        if (UserRecord.size() == 5) {
+        if ((UserRecord.size() == 5) && (ComputerRecord.size() == 5)) {
             if (user_goal_count > (computer_goal_count + computer_shots_remaining)) {
                 UserWin = true;
             }
@@ -368,11 +368,12 @@ public class Game {
             }
         }
         else {
-            if (user_goal_count > computer_goal_count) {
-                UserWin = true;
-            }
-            else if (user_goal_count < computer_goal_count) {
-                ComputerWin = true;
+            if (UserRecord.size() == ComputerRecord.size()) {
+                if (user_goal_count > computer_goal_count) {
+                    UserWin = true;
+                } else if (user_goal_count < computer_goal_count) {
+                    ComputerWin = true;
+                }
             }
         }
 
