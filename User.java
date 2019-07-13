@@ -18,14 +18,16 @@ public class User {
 
     public String shoot() {
         System.out.println("Where would you like to shoot the ball?");
-        System.out.println("Your choices are tl, tr, bl, br, c");
+        System.out.println("Your choices are top-left, bottom-left, center, top-right, or bottom-right." +
+                " Type one of the following: (tl, bl, c, tr, br)");
         shoot_choice = s.nextLine();
         while (!(shoot_choice.equals("tl") || shoot_choice.equals("tr") || shoot_choice.equals("bl")
             || shoot_choice.equals("br") || shoot_choice.equals("c"))) {
             System.out.println("That is not a valid shooting direction choice.");
             System.out.println("Please enter a valid choice.");
-            System.out.println("Your choices are tl, tr, bl, br, c");
+            System.out.println("Your choices are (tl, bl, c, tr, br)");
             shoot_choice = s.nextLine();
+
         }
 
         return shoot_choice;
@@ -33,12 +35,13 @@ public class User {
 
     public String dive() {
         System.out.println("Where would you like your keeper to dive?");
-        System.out.println("Your choices are r, l, c");
+        System.out.println("Your choices are right, left, or stay-central. " +
+                "Type one of the following: (r, l, c)");
         dive_choice = s.nextLine();
         while (!(dive_choice.equals("r") || dive_choice.equals("l") || dive_choice.equals("c"))) {
-            System.out.println("Taht is not a valid diving direction choice.");
+            System.out.println("That is not a valid diving direction choice.");
             System.out.println("Please enter a valid choice.");
-            System.out.println("Your choices are r, l, c");
+            System.out.println("Your choices are (r, l, c)");
             dive_choice = s.nextLine();
         }
         return dive_choice;
