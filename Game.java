@@ -295,7 +295,7 @@ public class Game {
     }
 
     public static void update_score_user(ArrayList<String> records, boolean is_goal) {
-        if (records.size() <= 5) {
+        if (user_shots_taken < 4) {
             if (is_goal) {
                 records.set(user_shots_taken, "goal");
                 user_shots_taken ++;
@@ -316,7 +316,7 @@ public class Game {
     }
 
     public static void update_score_computer(ArrayList<String> records, boolean is_goal) {
-        if (records.size() <= 5) {
+        if (computer_shots_taken < 4) {
             if (is_goal) {
                 records.set(computer_shots_taken, "goal");
                 computer_shots_taken ++;
