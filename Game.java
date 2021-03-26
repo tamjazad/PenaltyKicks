@@ -5,6 +5,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Game {
 
@@ -47,10 +48,15 @@ public class Game {
         }
     }
 
-    public void play() {
-
-        System.out.println("Welcome to the penalty shootout!");
-
+    public void play() throws InterruptedException {
+	System.out.println("***-------------***");
+	TimeUnit.MILLISECONDS.sleep(300);
+        System.out.print("WELCOME TO...");
+	TimeUnit.MILLISECONDS.sleep(700);
+	System.out.println("the penalty shootout!");
+	TimeUnit.MILLISECONDS.sleep(700);
+	System.out.println("***-------------***");
+	TimeUnit.MILLISECONDS.sleep(300);
         determine_first_shooter();
 
         if (ShootFirst.equals("User")) {
@@ -75,6 +81,7 @@ public class Game {
     public static void enter_to_cont() {
         System.out.println("Press enter to continue.");
         s.nextLine();
+	System.out.println("*----------*");
     }
 
     public static void determine_first_shooter() {
@@ -295,7 +302,7 @@ public class Game {
     }
 
     public static void update_score_user(ArrayList<String> records, boolean is_goal) {
-        if (user_shots_taken < 4) {
+        if (user_shots_taken <= 4) {
             if (is_goal) {
                 records.set(user_shots_taken, "goal");
                 user_shots_taken ++;
@@ -316,7 +323,7 @@ public class Game {
     }
 
     public static void update_score_computer(ArrayList<String> records, boolean is_goal) {
-        if (computer_shots_taken < 4) {
+        if (computer_shots_taken <= 4) {
             if (is_goal) {
                 records.set(computer_shots_taken, "goal");
                 computer_shots_taken ++;
